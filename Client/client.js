@@ -5,6 +5,6 @@ window.onload = function(){
 
 
   socket.on('message', function(data){
-    content.value = content.value + " " + data.message;
+    content.value = content.value + " "+ data.message;
   })
 }
