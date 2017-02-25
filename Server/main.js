@@ -1,15 +1,19 @@
 var express = require('express');
 var app = express();
 var socketio = require('socket.io');
+var cpu = require('./cpuInfo.js');
+var memory = require('./memoryInfo.js')
 
 var io = socketio.listen(app.listen(8081));
+
+//cpuDetails();
+console.log(totalMemory());
 
 io.sockets.on('connection', function(socket){
   console.log('A user connected');
 
+
   setInterval(function(){socket.emit('message', {message: 'Socketio is working'});},5000);
-
-
 
   socket.on('disconnect', function(){
     console.log('A user disconnected');
