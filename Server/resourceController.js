@@ -8,7 +8,7 @@ module.exports.getGeneralInfo = function(){
   var obj = new Object();
   obj.general = getGeneralInfo();
   obj.memory = getMemoryInfo();
-  obj.cpu = cpu.getCPUModel();
+  obj.cpu = getCPUInfo();
   return obj;
 };
 
@@ -30,6 +30,6 @@ getMemoryInfo = function(){
 
 getCPUInfo = function(){
   var cpuInfo = new Object();
-
+  cpuInfo.model = cpu.getCPUModel(0).model;
   return cpuInfo;
 }
