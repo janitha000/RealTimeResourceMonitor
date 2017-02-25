@@ -1,13 +1,12 @@
 var express = require('express');
 var app = express();
 var socketio = require('socket.io');
-var cpu = require('./cpuInfo.js');
-var memory = require('./memoryInfo.js')
+var routes = require('./routes.js')
 
+routes(app);
 var io = socketio.listen(app.listen(8081));
 
-//cpuDetails();
-console.log(memory.getTotalMemory());
+
 
 io.sockets.on('connection', function(socket){
   console.log('A user connected');
