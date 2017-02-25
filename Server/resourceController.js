@@ -8,8 +8,12 @@ module.exports.getGeneralInfo = function(){
   var obj = new Object();
   obj.general = getGeneralInfo();
   obj.memory = getMemoryInfo();
-
+  obj.cpu = cpu.getCPUModel();
   return obj;
+};
+
+module.exports.getCPUInfo = function(core){
+  return cpu.getCPUModel(core);
 }
 
 getGeneralInfo = function(){
@@ -18,8 +22,14 @@ getGeneralInfo = function(){
   generalInfo.upTime = general.getUpTime();
   return generalInfo;
 }
-var getMemoryInfo = function(){
+getMemoryInfo = function(){
   var memoryInfo = new Object();
   memoryInfo.totalMemory = memory.getTotalMemory();
   return memoryInfo;
+}
+
+getCPUInfo = function(){
+  var cpuInfo = new Object();
+
+  return cpuInfo;
 }

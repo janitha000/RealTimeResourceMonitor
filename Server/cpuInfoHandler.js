@@ -2,6 +2,12 @@ var os = require('os');
 
 var cpus = os.cpus();
 
-getCPUModel = function(){
-  
+module.exports.getCPUModel = function(core){
+  if(core == null){
+    return cpus;
+  }
+  else
+  {
+      return cpus[core];
+  }
 }
