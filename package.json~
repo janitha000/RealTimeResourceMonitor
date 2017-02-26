@@ -1,0 +1,11 @@
+{
+    "name": "RealTimeResourceMonitor",
+    "version": "0.0.1",
+    "description": "Real time resource monitor",
+    "dependencies": {
+        "socket.io": "latest",
+        "express": "latest"
+        "react" : "latest"
+    },
+    "author": "Janitha Tennakoon"
+}
