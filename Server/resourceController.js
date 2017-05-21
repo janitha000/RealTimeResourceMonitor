@@ -22,7 +22,7 @@ getGeneralInfo = function(){
   generalInfo.upTime = general.getUpTime();
   return generalInfo;
 }
-getMemoryInfo = function(){
+module.exports.getMemoryInfo = function(){
   var memoryInfo = new Object();
   memoryInfo.totalMemory = memory.getTotalMemory();
   return memoryInfo;

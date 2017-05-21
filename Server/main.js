@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var socketio = require('socket.io');
 var routes = require('./routes.js')
+var resources = require('./resourceController.js')
 
 routes(app);
 var io = socketio.listen(app.listen(8081));
@@ -11,7 +12,7 @@ var io = socketio.listen(app.listen(8081));
 io.sockets.on('connection', function(socket){
   console.log('A user connected');
 
-  setInterval(function(){socket.emit('message', {message: totalMemory()});},5000);
+  setInterval(function(){socket.emit('message', {message:"Janitha"});},5000);
 
   socket.on('disconnect', function(){
     console.log('A user disconnected');
