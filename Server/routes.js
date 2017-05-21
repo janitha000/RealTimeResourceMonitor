@@ -1,6 +1,10 @@
 var resourceController = require('./resourceController');
 
 module.exports = function(app){
+  app.get('/', function(req,res){
+    res.render('../Client/index.ejs');
+  })
+
   app.get('/generalinfo', function(req,res){
     //console.log("GET generalinfo");
     var obj = resourceController.getGeneralInfo();
