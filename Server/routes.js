@@ -5,6 +5,10 @@ module.exports = function(app){
     res.render('../Client/index.ejs');
   })
 
+  app.get('/login', function(req,res){
+    res.render('../Server/views/login.ejs' /*, {message: req.flash('loginMessage') }*/);
+  })
+
   app.get('/generalinfo', function(req,res){
     //console.log("GET generalinfo");
     var obj = resourceController.getGeneralInfo();
